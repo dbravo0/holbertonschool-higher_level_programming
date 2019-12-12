@@ -3,10 +3,10 @@ if __name__ == "__main__":
 
     from sys import argv
 
-    c = len(argv) - 1
+    l = len(argv)
     r = 0
 
-    for a in range(c):
-        r += int(argv[a + 1])
+    for i in range(1, l):
+        r += int(argv[i])
     print(r)
 
