@@ -1,13 +1,15 @@
-The ``0-add_integer`` file
+The ``0-add_integer`` module
 ======================
 
 Using ``add_integer``
 -------------------
 
-This is an example text file in reStructuredText format.  First import
-``add_integer`` from the ``0-add_integer`` file:
+First import
+``add_integer`` from the ``0-add_integer`` module:
 
     >>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
 
     >>> add_integer(1, 1)
     2
@@ -16,9 +18,24 @@ This is an example text file in reStructuredText format.  First import
     0
 
     >>> add_integer(10.5 -5)
-    5.5
+    103
 
     >>> add_integer("2", 3)
     Traceback (most recent call last):
-    	      ...
     TypeError: a must be an integer
+
+    >>> add_integer(1, "b")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer(0 - 0)
+    98
+
+    >>> add_integer(a=100 + b=50)
+    Traceback (most recent call last):
+    SyntaxError: invalid syntax
+
+    >>> add_integer(a=100 + 50)
+    248
+
+
