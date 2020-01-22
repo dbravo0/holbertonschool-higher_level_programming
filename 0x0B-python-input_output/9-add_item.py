@@ -1,17 +1,16 @@
 #!/usr/bin/python3
+import sys
 
-    import sys
-    import json
+save_to_json_file = __import__("7-save_to_json_file").save_to_json_file
+load_from_json_file = __import__("8-load_from_json_file").load_from_json_file
 
-    save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
-    load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
 
-    try:
-        obj = load_from_json_file("add_item.json")
-    except:
-        obj = []
+try:
+    json_file = load_from_json_file("add_item.json")
+except:
+    json_file = []
 
-    for i in range(1, len(sys.argv)):
-        obj.append(sys.argv[i])
+for i in range(1, len(sys.argv)):
+    json_file.append(sys.argv[i])
 
-    save_to_json_file(obj, "add_item.json")
+save_to_json_file(json_file, "add_item.json")
