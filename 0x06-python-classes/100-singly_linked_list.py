@@ -48,3 +48,4 @@ class SinglyLinkedList:
             current = current.next_node
         n_list.sort(key=int)
         return ("\n".join(n_list))
+
