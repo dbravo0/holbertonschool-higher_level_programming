@@ -25,6 +25,8 @@ class Node:
         self.__next_node = value
 
 class SinglyLinkedList:
+
+
     def __init__(self):
         self.__head = None
 
@@ -48,4 +50,3 @@ class SinglyLinkedList:
             current = current.next_node
         n_list.sort(key=int)
         return ("\n".join(n_list))
-
