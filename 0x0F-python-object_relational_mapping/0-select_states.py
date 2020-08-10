@@ -15,8 +15,9 @@ if __name__ == '__main__':
     conn = MySQLdb.connect(host=db_host,
                            port=3306,
                            user=user,
-                           password=pswd,
-                           db=db_name)
+                           passwd=pswd,
+                           db=db_name,
+                           charset="utf8")
 
     cur = conn.cursor()
     cur.execute("SELECT * FROM states")
