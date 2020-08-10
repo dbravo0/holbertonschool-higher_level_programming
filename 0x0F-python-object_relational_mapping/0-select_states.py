@@ -2,16 +2,21 @@
 #Lists all states from the database
 
 import MySQLdb
-from sys import argv
+import sys
 
 
 if __name__ == '__main__':
 
-    conn = MySQLdb.connect(host="localhost",
+    db_host = "localhost"
+    user = sys.argv[1]
+    pswd = sys.argv[2]
+    db_name = sys.argv[3]
+
+    conn = MySQLdb.connect(host=db_host,
                            port=3306,
-                           user=argv[1],
-                           passwd=argv[2],
-                           db=argv[3])
+                           user=user,
+                           password=pswd,
+                           db=db_name)
 
     cur = conn.cursor()
     cur.execute("SELECT * FROM states")
