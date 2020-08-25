@@ -11,7 +11,7 @@ if __name__ == "__main__":
     else:
         data = None
     url = requests.post("http://0.0.0.0:5000/search_user", data=data)
-    else:
+    try:
         j = url.json()
         if not j:
             print("No result")
