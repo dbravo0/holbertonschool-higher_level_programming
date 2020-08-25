@@ -6,9 +6,10 @@ import requests
 
 
 if __name__ == "__main__":
-    data = {'q': ""}
     if len(argv) > 1:
-        data['q'] = argv[1]
+        data = {"q": argv[1]}
+    else:
+        data = None
     url = requests.get("http://0.0.0.0:5000/search_user", data)
     if "json" not in url.headers.get("content-type"):
         print("Not a valid JSON")
