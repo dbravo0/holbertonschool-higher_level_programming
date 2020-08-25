@@ -11,8 +11,6 @@ if __name__ == "__main__":
     else:
         data = None
     url = requests.post("http://0.0.0.0:5000/search_user", data=data)
-    if "json" not in url.headers.get("content-type"):
-        print("Not a valid JSON")
     else:
         j = url.json()
         if not j:
