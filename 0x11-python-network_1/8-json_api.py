@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Sends a POST request to http://IP:5000/search_user with letter as a parameter"""
+"""Sends a POST request to IP:5000/search_user with letter as a parameter"""
 
 import sys import argv
 import requests
@@ -13,7 +13,10 @@ if __name__ == "__main__":
     if "json" not in url.headers.get("content-type"):
         print("Not a valid JSON")
     else:
-        if url.json():
-            print("[{}] {}".format(url.json().get("id"), url.json().get("name")))
-        else:
+        j = url.json()
+        if not j:
             print("No result")
+        else:
+            print("[{}] {}".format(j.get("id"), j.get("name")))
+    except ValueError:
+        print("Not a valid JSON")
