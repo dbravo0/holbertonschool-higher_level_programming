@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Sends a POST request to IP:5000/search_user with letter as a parameter"""
 
-import sys import argv
+from sys import argv
 import requests
 
 
