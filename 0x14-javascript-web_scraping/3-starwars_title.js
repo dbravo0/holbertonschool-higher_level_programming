@@ -1,10 +1,7 @@
 #!/usr/bin/node
 
-const url = 'http://swapi.co/api/films/' + process.argv[2];
 const request = require('request');
-request.get(url, function (error, response, body) {
-  if (error) {
-    return console.log(error.toString());
-  }
+request(`http://swapi.dev/api/films/${process.argv[2]}`, function (error, response, body) {
+  error && console.log(error);
   console.log(JSON.parse(body).title);
 });
