@@ -7,7 +7,7 @@ request(url, (error, response, body) => {
   if (error) { console.log(error); }
   const characters = JSON.parse(body).characters;
   for (const data of characters) {
-    request(data, funtion (error, response, body) => {
+    request(data, funtion (error, response, body) {
       if (error) { console.log(error); }
       console.log(JSON.parse(body).name);
     });
