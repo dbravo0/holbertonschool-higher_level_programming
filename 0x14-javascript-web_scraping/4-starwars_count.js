@@ -12,9 +12,9 @@ request(url, function (error, response, body) {
     for (const data of films) {
       for (const str of films[data].characters) {
         if (films[data].characters[str],includes('18')) {
-          n += 1;
+          c += 1;
         }
       }
     }
-    console.log(n);
+    console.log(c);
 });
